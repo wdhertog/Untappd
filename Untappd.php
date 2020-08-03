@@ -15,7 +15,7 @@ class Untappd
 
 	private $baseUrl = "https://api.untappd.com/v4";
 
-	private $userAgent = "Unique name & client_id";
+	private $userAgent = "Willem's Bierenlijst";
 
 	/**
 	 * Constructor
