@@ -12,6 +12,10 @@ class Untappd
 	private $clientId;
 
 	private $clientSecret;
+	
+	private $callbackUrl;
+	
+	private $accessToken;
 
 	private $baseUrl = "https://api.untappd.com/v4";
 
@@ -23,11 +27,13 @@ class Untappd
 	 * @param string $client_id
 	 * @param string $client_secret
 	 */
-	public function __construct($client_id, $client_secret)
+	public function __construct($client_id, $client_secret)//, $callback, $token = NULL)
 	{
 		$this->clientId = $client_id;
 		$this->clientSecret = $client_secret;
 		$this->userAgent .= " ($this->clientId)";
+		$this->callbackUrl = $callback;
+		$this->accessToken = $token;
 	}
 
 	public function get($url, $params = array())
